@@ -1,0 +1,74 @@
+resources:
+  # CRD's
+  - ./crds/crd-thanosrulers.yaml
+  - ./crds/crd-prometheuses.yaml
+  - ./crds/crd-alertmanagers.yaml
+  - ./crds/crd-alertmanagerconfigs.yaml
+  - ./crds/crd-podmonitors.yaml
+  - ./crds/crd-probes.yaml
+  - ./crds/crd-servicemonitors.yaml
+  - ./crds/crd-prometheusrules.yaml
+
+  # Alertmanager
+  - ./alertmanager/alertmanager.yaml
+  - ./alertmanager/secret.yaml
+  - ./alertmanager/service.yaml
+  - ./alertmanager/serviceaccount.yaml
+
+  # Error-service
+  - ./error-service/configmap.yaml
+  - ./error-service/deployment.yaml
+  - ./error-service/ingress.yaml
+  - ./error-service/service.yaml
+
+  # Grafana
+  - ./grafana/clusterrole.yaml
+  - ./grafana/clusterrolebinding.yaml
+  - ./grafana/configmap-dashboard-provider.yaml
+  - ./grafana/configmap.yaml
+  - ./grafana/configmaps-datasources.yaml
+  - ./grafana/deployment.yaml
+  - ./grafana/role.yaml
+  - ./grafana/rolebinding.yaml
+  - ./grafana/secret.yaml
+  - ./grafana/service.yaml
+  - ./grafana/serviceaccount.yaml
+
+  # Ingress Nginx
+  - ./ingress-nginx/clusterrole.yaml
+  - ./ingress-nginx/clusterrolebinding.yaml
+  - ./ingress-nginx/configmap.yaml
+  - ./ingress-nginx/deployment.yaml
+  - ./ingress-nginx/role.yaml
+  - ./ingress-nginx/rolebinding.yaml
+  - ./ingress-nginx/service-metrics.yaml
+  - ./ingress-nginx/service.yaml
+  - ./ingress-nginx/serviceaccount.yaml
+
+  # Prometheus
+  - ./prometheus/clusterrole.yaml
+  - ./prometheus/clusterrolebinding.yaml
+  - ./prometheus/prometheus.yaml
+  - ./prometheus/service.yaml
+  - ./prometheus/serviceaccount.yaml
+
+  # Prometheus Operator
+  - ./prometheus-operator/clusterrole.yaml
+  - ./prometheus-operator/clusterrolebinding.yaml
+  - ./prometheus-operator/deployment.yaml
+  - ./prometheus-operator/service.yaml
+  - ./prometheus-operator/serviceaccount.yaml
+
+  # Rules
+  - ./rules/ingress-nginx-500-error-rule.yaml
+  - ./rules/ingress-nginx-slo-errorbudget-rules.yaml
+
+  # Service Monitors
+  - ./servicemonitors/servicemonitor-alertmanager.yaml
+  - ./servicemonitors/servicemonitor-grafana.yaml
+  - ./servicemonitors/servicemonitor-ingress-nginx.yaml
+  - ./servicemonitors/servicemonitor-prometheus-operator.yaml
+  - ./servicemonitors/servicemonitor-prometheus.yaml
+
+  # Dashboards
+  - ./dashboards

@@ -81,7 +81,9 @@
         {"file": "rules/ingress-nginx-slo-errorbudget-rules.yaml", "target": "/root/manifests/rules/", "chmod": "+rw"},
 
         {"file": "dashboards/ingress-nginx-controller.json",  "target": "/root/manifests/dashboards/", "chmod": "+rw"},
-        {"file": "dashboards/kustomization.yaml",             "target": "/root/manifests/dashboards/", "chmod": "+rw"}
+        {"file": "dashboards/kustomization.yaml",             "target": "/root/manifests/dashboards/", "chmod": "+rw"},
+
+        {"file": "kustomization.yaml", "target": "/root/manifests/", "chmod": "+rw"}
       ]
     },
     "intro": {
