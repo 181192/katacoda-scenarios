@@ -1,5 +1,11 @@
 {
   "title": "Monitoring",
   "description": "Monitoring with Prometheus and Kubernetes",
-  "courses": []
+  "courses": [
+    {
+      "course_id": "01-prom-op-slo-tutorial",
+      "title": "Prometheus Operator SLO Tutorial",
+      "description": "SLO tutorial with Prometheus Operator on Kubernetes"
+    }
+  ]
 }

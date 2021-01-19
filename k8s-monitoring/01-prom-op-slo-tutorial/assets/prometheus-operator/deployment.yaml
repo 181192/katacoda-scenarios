@@ -1,0 +1,52 @@
+---
+# Source: kube-prometheus-stack/templates/prometheus-operator/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-prometheus-stack-operator
+  namespace: default
+  labels:
+    app: kube-prometheus-stack-operator
+    
+    chart: kube-prometheus-stack-12.10.6
+    release: "kube-prometheus-stack"
+    heritage: "Helm"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-prometheus-stack-operator
+      release: "kube-prometheus-stack"
+  template:
+    metadata:
+      labels:
+        app: kube-prometheus-stack-operator
+        
+        chart: kube-prometheus-stack-12.10.6
+        release: "kube-prometheus-stack"
+        heritage: "Helm"
+    spec:
+      containers:
+        - name: kube-prometheus-stack
+          image: "quay.io/prometheus-operator/prometheus-operator:v0.44.0"
+          imagePullPolicy: "IfNotPresent"
+          args:
+            - --localhost=127.0.0.1
+            - --prometheus-config-reloader=quay.io/prometheus-operator/prometheus-config-reloader:v0.44.0
+            # Empty if statement to catch non-semver master tags that do not need the --config-reloader-image flag
+            - --config-reloader-cpu=100m
+            - --config-reloader-memory=50Mi
+          ports:
+            - containerPort: 8080
+              name: http
+          resources:
+            {}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+      securityContext:
+        fsGroup: 65534
+        runAsGroup: 65534
+        runAsNonRoot: true
+        runAsUser: 65534
+      serviceAccountName: kube-prometheus-stack-operator

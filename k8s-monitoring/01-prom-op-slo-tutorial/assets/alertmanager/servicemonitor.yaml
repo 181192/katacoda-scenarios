@@ -1,0 +1,25 @@
+---
+# Source: kube-prometheus-stack/templates/alertmanager/servicemonitor.yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: kube-prometheus-stack-alertmanager
+  namespace: default
+  labels:
+    app: kube-prometheus-stack-alertmanager
+    
+    chart: kube-prometheus-stack-12.10.6
+    release: "kube-prometheus-stack"
+    heritage: "Helm"
+spec:
+  selector:
+    matchLabels:
+      app: kube-prometheus-stack-alertmanager
+      release: "kube-prometheus-stack"
+      self-monitor: "true"
+  namespaceSelector:
+    matchNames:
+      - "default"
+  endpoints:
+  - port: web
+    path: "/metrics"
