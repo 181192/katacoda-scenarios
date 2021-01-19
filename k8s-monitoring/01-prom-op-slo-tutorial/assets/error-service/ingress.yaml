@@ -8,8 +8,7 @@ metadata:
     app: error-service
 spec:
   rules:
-  - host: '*'
-    http:
+  - http:
       paths:
       - path: /
         backend:
