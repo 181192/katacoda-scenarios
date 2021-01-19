@@ -1,0 +1,103 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+  name: ingress-nginx-slo-errors
+spec:
+  groups:
+    - name: ingress-nginx
+      rules:
+        - alert: ErrorBudgetBurn
+          annotations:
+            message: 'High error budget burn for job="ingress-nginx-controller-metrics" (current value: {{ $value }})'
+          expr: |
+            sum(nginx_ingress_controller_requests:burnrate5m{job="ingress-nginx-controller-metrics"}) > (14.40 * (1-0.99950))
+            and
+            sum(nginx_ingress_controller_requests:burnrate1h{job="ingress-nginx-controller-metrics"}) > (14.40 * (1-0.99950))
+          for: 2m
+          labels:
+            job: ingress-nginx-controller-metrics
+            severity: critical
+        - alert: ErrorBudgetBurn
+          annotations:
+            message: 'High error budget burn for job="ingress-nginx-controller-metrics" (current value: {{ $value }})'
+          expr: |
+            sum(nginx_ingress_controller_requests:burnrate30m{job="ingress-nginx-controller-metrics"}) > (6.00 * (1-0.99950))
+            and
+            sum(nginx_ingress_controller_requests:burnrate6h{job="ingress-nginx-controller-metrics"}) > (6.00 * (1-0.99950))
+          for: 15m
+          labels:
+            job: ingress-nginx-controller-metrics
+            severity: critical
+        - alert: ErrorBudgetBurn
+          annotations:
+            message: 'High error budget burn for job="ingress-nginx-controller-metrics" (current value: {{ $value }})'
+          expr: |
+            sum(nginx_ingress_controller_requests:burnrate2h{job="ingress-nginx-controller-metrics"}) > (3.00 * (1-0.99950))
+            and
+            sum(nginx_ingress_controller_requests:burnrate1d{job="ingress-nginx-controller-metrics"}) > (3.00 * (1-0.99950))
+          for: 1h
+          labels:
+            job: ingress-nginx-controller-metrics
+            severity: warning
+        - alert: ErrorBudgetBurn
+          annotations:
+            message: 'High error budget burn for job="ingress-nginx-controller-metrics" (current value: {{ $value }})'
+          expr: |
+            sum(nginx_ingress_controller_requests:burnrate6h{job="ingress-nginx-controller-metrics"}) > (1.00 * (1-0.99950))
+            and
+            sum(nginx_ingress_controller_requests:burnrate3d{job="ingress-nginx-controller-metrics"}) > (1.00 * (1-0.99950))
+          for: 3h
+          labels:
+            job: ingress-nginx-controller-metrics
+            severity: warning
+        - expr: |
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics",status=~"5.."}[1d]))
+            /
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics"}[1d]))
+          labels:
+            job: ingress-nginx-controller-metrics
+          record: nginx_ingress_controller_requests:burnrate1d
+        - expr: |
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics",status=~"5.."}[1h]))
+            /
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics"}[1h]))
+          labels:
+            job: ingress-nginx-controller-metrics
+          record: nginx_ingress_controller_requests:burnrate1h
+        - expr: |
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics",status=~"5.."}[2h]))
+            /
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics"}[2h]))
+          labels:
+            job: ingress-nginx-controller-metrics
+          record: nginx_ingress_controller_requests:burnrate2h
+        - expr: |
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics",status=~"5.."}[30m]))
+            /
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics"}[30m]))
+          labels:
+            job: ingress-nginx-controller-metrics
+          record: nginx_ingress_controller_requests:burnrate30m
+        - expr: |
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics",status=~"5.."}[3d]))
+            /
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics"}[3d]))
+          labels:
+            job: ingress-nginx-controller-metrics
+          record: nginx_ingress_controller_requests:burnrate3d
+        - expr: |
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics",status=~"5.."}[5m]))
+            /
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics"}[5m]))
+          labels:
+            job: ingress-nginx-controller-metrics
+          record: nginx_ingress_controller_requests:burnrate5m
+        - expr: |
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics",status=~"5.."}[6h]))
+            /
+            sum(rate(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics"}[6h]))
+          labels:
+            job: ingress-nginx-controller-metrics
+          record: nginx_ingress_controller_requests:burnrate6h

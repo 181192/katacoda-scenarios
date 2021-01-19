@@ -75,7 +75,10 @@
         {"file": "servicemonitors/servicemonitor-grafana.yaml",             "target": "/root/manifests/servicemonitors/", "chmod": "+rw"},
         {"file": "servicemonitors/servicemonitor-ingress-nginx.yaml",       "target": "/root/manifests/servicemonitors/", "chmod": "+rw"},
         {"file": "servicemonitors/servicemonitor-prometheus-operator.yaml", "target": "/root/manifests/servicemonitors/", "chmod": "+rw"},
-        {"file": "servicemonitors/servicemonitor-prometheus.yaml",          "target": "/root/manifests/servicemonitors/", "chmod": "+rw"}
+        {"file": "servicemonitors/servicemonitor-prometheus.yaml",          "target": "/root/manifests/servicemonitors/", "chmod": "+rw"},
+
+        {"file": "rules/ingress-nginx-500-error-rule.yaml",        "target": "/root/manifests/rules/", "chmod": "+rw"},
+        {"file": "rules/ingress-nginx-slo-errorbudget-rules.yaml", "target": "/root/manifests/rules/", "chmod": "+rw"}
       ]
     },
     "intro": {
