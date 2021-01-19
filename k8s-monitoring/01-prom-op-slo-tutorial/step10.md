@@ -16,4 +16,4 @@ kubectl apply -k /root/manifests/dashboards/
 
 
 
-Now we should see the dashboard in Grafana: [Grafana UI](https://[[HOST_SUBDOMAIN]]-30030-[[KATACODA_HOST]].environments.katacoda.com/)
+Now we should see the dashboard in Grafana: [Grafana UI](https://[[HOST_SUBDOMAIN]]-30030-[[KATACODA_HOST]].environments.katacoda.com/d/XNam6FSH9XFn/ingress-nginx-controller?orgId=1&refresh=5s)
