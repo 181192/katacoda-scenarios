@@ -70,5 +70,6 @@ resources:
   - ./servicemonitors/servicemonitor-prometheus-operator.yaml
   - ./servicemonitors/servicemonitor-prometheus.yaml
 
+bases:
   # Dashboards
   - ./dashboards
