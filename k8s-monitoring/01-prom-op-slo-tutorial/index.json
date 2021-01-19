@@ -29,35 +29,51 @@
 
         {"file": "alertmanager/alertmanager.yaml",    "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
         {"file": "alertmanager/secret.yaml",          "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
-        {"file": "alertmanager/serviceaccount.yaml",  "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
         {"file": "alertmanager/service.yaml",         "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
+        {"file": "alertmanager/serviceaccount.yaml",  "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
 
-        {"file": "grafana/clusterrolebinding.yaml",           "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "error-service/configmap.yaml",      "target": "/root/manifests/error-service/", "chmod": "+rw"},
+        {"file": "error-service/deployment.yaml",     "target": "/root/manifests/error-service/", "chmod": "+rw"},
+        {"file": "error-service/ingress.yaml",        "target": "/root/manifests/error-service/", "chmod": "+rw"},
+        {"file": "error-service/service.yaml",        "target": "/root/manifests/error-service/", "chmod": "+rw"},
+
         {"file": "grafana/clusterrole.yaml",                  "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/clusterrolebinding.yaml",           "target": "/root/manifests/grafana/", "chmod": "+rw"},
         {"file": "grafana/configmap-dashboard-provider.yaml", "target": "/root/manifests/grafana/", "chmod": "+rw"},
-        {"file": "grafana/configmaps-datasources.yaml",       "target": "/root/manifests/grafana/", "chmod": "+rw"},
         {"file": "grafana/configmap.yaml",                    "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/configmaps-datasources.yaml",       "target": "/root/manifests/grafana/", "chmod": "+rw"},
         {"file": "grafana/deployment.yaml",                   "target": "/root/manifests/grafana/", "chmod": "+rw"},
-        {"file": "grafana/rolebinding.yaml",                  "target": "/root/manifests/grafana/", "chmod": "+rw"},
         {"file": "grafana/role.yaml",                         "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/rolebinding.yaml",                  "target": "/root/manifests/grafana/", "chmod": "+rw"},
         {"file": "grafana/secret.yaml",                       "target": "/root/manifests/grafana/", "chmod": "+rw"},
-        {"file": "grafana/serviceaccount.yaml",               "target": "/root/manifests/grafana/", "chmod": "+rw"},
         {"file": "grafana/service.yaml",                      "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/serviceaccount.yaml",               "target": "/root/manifests/grafana/", "chmod": "+rw"},
 
-        {"file": "prometheus/clusterrolebinding.yaml",  "target": "/root/manifests/prometheus/", "chmod": "+rw"},
+        {"file": "ingress-nginx/clusterrole.yaml",        "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+        {"file": "ingress-nginx/clusterrolebinding.yaml", "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+        {"file": "ingress-nginx/configmap.yaml",          "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+        {"file": "ingress-nginx/deployment.yaml",         "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+        {"file": "ingress-nginx/role.yaml",               "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+        {"file": "ingress-nginx/rolebinding.yaml",        "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+        {"file": "ingress-nginx/service-metrics.yaml",    "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+        {"file": "ingress-nginx/service.yaml",            "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+        {"file": "ingress-nginx/serviceaccount.yaml",     "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+
         {"file": "prometheus/clusterrole.yaml",         "target": "/root/manifests/prometheus/", "chmod": "+rw"},
+        {"file": "prometheus/clusterrolebinding.yaml",  "target": "/root/manifests/prometheus/", "chmod": "+rw"},
         {"file": "prometheus/prometheus.yaml",          "target": "/root/manifests/prometheus/", "chmod": "+rw"},
-        {"file": "prometheus/serviceaccount.yaml",      "target": "/root/manifests/prometheus/", "chmod": "+rw"},
         {"file": "prometheus/service.yaml",             "target": "/root/manifests/prometheus/", "chmod": "+rw"},
+        {"file": "prometheus/serviceaccount.yaml",      "target": "/root/manifests/prometheus/", "chmod": "+rw"},
 
-        {"file": "prometheus-operator/clusterrolebinding.yaml", "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
         {"file": "prometheus-operator/clusterrole.yaml",        "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
+        {"file": "prometheus-operator/clusterrolebinding.yaml", "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
         {"file": "prometheus-operator/deployment.yaml",         "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
-        {"file": "prometheus-operator/serviceaccount.yaml",     "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
         {"file": "prometheus-operator/service.yaml",            "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
+        {"file": "prometheus-operator/serviceaccount.yaml",     "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
 
         {"file": "servicemonitors/servicemonitor-alertmanager.yaml",        "target": "/root/manifests/servicemonitors/", "chmod": "+rw"},
         {"file": "servicemonitors/servicemonitor-grafana.yaml",             "target": "/root/manifests/servicemonitors/", "chmod": "+rw"},
+        {"file": "servicemonitors/servicemonitor-ingress-nginx.yaml",       "target": "/root/manifests/servicemonitors/", "chmod": "+rw"},
         {"file": "servicemonitors/servicemonitor-prometheus-operator.yaml", "target": "/root/manifests/servicemonitors/", "chmod": "+rw"},
         {"file": "servicemonitors/servicemonitor-prometheus.yaml",          "target": "/root/manifests/servicemonitors/", "chmod": "+rw"}
       ]
@@ -77,7 +93,8 @@
     "dashboards": [
       {"name": "Prometheus", "port": 30090},
       {"name": "Grafana", "port": 30030},
-      {"name": "Alertmanager", "port": 30903}
+      {"name": "Alertmanager", "port": 30903},
+      {"name": "Ingress Nginx", "port": 32080}
     ]
   },
   "backend": {

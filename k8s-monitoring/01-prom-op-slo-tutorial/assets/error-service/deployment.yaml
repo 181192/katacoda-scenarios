@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: error-service
+  labels:
+    app: error-service
+spec:
+  selector:
+    matchLabels:
+      app: error-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: error-service
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.19.6-alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+            - name: error-service-nginx-conf
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+              readOnly: true
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 10
+        resources:
+          requests:
+            memory: "300Mi"
+            cpu: "200m"
+          limits:
+            memory: "300Mi"
+            cpu: "200m"
+      volumes:
+      - name: error-service-nginx-conf
+        configMap:
+          name: error-service-nginx-conf
+          items:
+            - key: nginx.conf
+              path: nginx.conf
