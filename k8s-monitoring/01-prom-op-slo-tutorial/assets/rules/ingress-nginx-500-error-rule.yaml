@@ -12,6 +12,7 @@ spec:
           expr: 100 * ( sum( nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics",status=~"5.+"} ) / sum(nginx_ingress_controller_requests{job="ingress-nginx-controller-metrics"}) ) > 5
           for: 1m
           labels:
+            job: ingress-nginx-controller-metrics
             severity: warning
           annotations:
             description: Too many 5XXs
