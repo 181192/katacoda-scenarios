@@ -28,6 +28,11 @@ data:
           stub_status;
         }
 
+        location /ok {
+          add_header Content-Type application/json;
+          return 200 '{"message":"oh yes"}';
+        }
+
         location / {
           add_header Content-Type application/json;
           return 500 '{"message":"error"}';
