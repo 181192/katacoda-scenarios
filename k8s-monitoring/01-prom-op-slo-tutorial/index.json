@@ -16,6 +16,50 @@
       {"text": "step9.md"},
       {"text": "step10.md"}
     ],
+    "assets": {
+      "master": [
+        {"file": "crds/crd-alertmanagerconfigs.yaml", "target": "/root/manifests/crds/", "chmod": "+rw"},
+        {"file": "crds/crd-alertmanagers.yaml",       "target": "/root/manifests/crds/", "chmod": "+rw"},
+        {"file": "crds/crd-podmonitors.yaml",         "target": "/root/manifests/crds/", "chmod": "+rw"},
+        {"file": "crds/crd-probes.yaml",              "target": "/root/manifests/crds/", "chmod": "+rw"},
+        {"file": "crds/crd-prometheuses.yaml",        "target": "/root/manifests/crds/", "chmod": "+rw"},
+        {"file": "crds/crd-prometheusrules.yaml",     "target": "/root/manifests/crds/", "chmod": "+rw"},
+        {"file": "crds/crd-servicemonitors.yaml",     "target": "/root/manifests/crds/", "chmod": "+rw"},
+        {"file": "crds/crd-thanosrulers.yaml",        "target": "/root/manifests/crds/", "chmod": "+rw"},
+
+        {"file": "alertmanager/alertmanager.yaml",    "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
+        {"file": "alertmanager/secret.yaml",          "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
+        {"file": "alertmanager/serviceaccount.yaml",  "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
+        {"file": "alertmanager/servicemonitor.yaml",  "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
+        {"file": "alertmanager/service.yaml",         "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
+
+        {"file": "grafana/clusterrolebinding.yaml",           "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/clusterrole.yaml",                  "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/configmap-dashboard-provider.yaml", "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/configmaps-datasources.yaml",       "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/configmap.yaml",                    "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/deployment.yaml",                   "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/rolebinding.yaml",                  "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/role.yaml",                         "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/secret.yaml",                       "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/serviceaccount.yaml",               "target": "/root/manifests/grafana/", "chmod": "+rw"},
+        {"file": "grafana/service.yaml",                      "target": "/root/manifests/grafana/", "chmod": "+rw"},
+
+        {"file": "prometheus/clusterrolebinding.yaml",  "target": "/root/manifests/prometheus/", "chmod": "+rw"},
+        {"file": "prometheus/clusterrole.yaml",         "target": "/root/manifests/prometheus/", "chmod": "+rw"},
+        {"file": "prometheus/prometheus.yaml",          "target": "/root/manifests/prometheus/", "chmod": "+rw"},
+        {"file": "prometheus/serviceaccount.yaml",      "target": "/root/manifests/prometheus/", "chmod": "+rw"},
+        {"file": "prometheus/servicemonitor.yaml",      "target": "/root/manifests/prometheus/", "chmod": "+rw"},
+        {"file": "prometheus/service.yaml",             "target": "/root/manifests/prometheus/", "chmod": "+rw"},
+
+        {"file": "prometheus-operator/clusterrolebinding.yaml", "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
+        {"file": "prometheus-operator/clusterrole.yaml",        "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
+        {"file": "prometheus-operator/deployment.yaml",         "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
+        {"file": "prometheus-operator/serviceaccount.yaml",     "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
+        {"file": "prometheus-operator/servicemonitor.yaml",     "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
+        {"file": "prometheus-operator/service.yaml",            "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"}
+      ]
+    },
     "intro": {
       "text": "intro.md",
       "courseData": "intro.sh"
@@ -23,50 +67,6 @@
     "finish": {
       "text": "finish.md"
     }
-  },
-  "assets": {
-    "master": [
-      {"file": "crds/crd-alertmanagerconfigs.yaml", "target": "/root/manifests/crds/", "chmod": "+rw"},
-      {"file": "crds/crd-alertmanagers.yaml",       "target": "/root/manifests/crds/", "chmod": "+rw"},
-      {"file": "crds/crd-podmonitors.yaml",         "target": "/root/manifests/crds/", "chmod": "+rw"},
-      {"file": "crds/crd-probes.yaml",              "target": "/root/manifests/crds/", "chmod": "+rw"},
-      {"file": "crds/crd-prometheuses.yaml",        "target": "/root/manifests/crds/", "chmod": "+rw"},
-      {"file": "crds/crd-prometheusrules.yaml",     "target": "/root/manifests/crds/", "chmod": "+rw"},
-      {"file": "crds/crd-servicemonitors.yaml",     "target": "/root/manifests/crds/", "chmod": "+rw"},
-      {"file": "crds/crd-thanosrulers.yaml",        "target": "/root/manifests/crds/", "chmod": "+rw"},
-
-      {"file": "alertmanager/alertmanager.yaml",    "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
-      {"file": "alertmanager/secret.yaml",          "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
-      {"file": "alertmanager/serviceaccount.yaml",  "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
-      {"file": "alertmanager/servicemonitor.yaml",  "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
-      {"file": "alertmanager/service.yaml",         "target": "/root/manifests/alertmanager/", "chmod": "+rw"},
-
-      {"file": "grafana/clusterrolebinding.yaml",           "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/clusterrole.yaml",                  "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/configmap-dashboard-provider.yaml", "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/configmaps-datasources.yaml",       "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/configmap.yaml",                    "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/deployment.yaml",                   "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/rolebinding.yaml",                  "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/role.yaml",                         "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/secret.yaml",                       "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/serviceaccount.yaml",               "target": "/root/manifests/grafana/", "chmod": "+rw"},
-      {"file": "grafana/service.yaml",                      "target": "/root/manifests/grafana/", "chmod": "+rw"},
-
-      {"file": "prometheus/clusterrolebinding.yaml",  "target": "/root/manifests/prometheus/", "chmod": "+rw"},
-      {"file": "prometheus/clusterrole.yaml",         "target": "/root/manifests/prometheus/", "chmod": "+rw"},
-      {"file": "prometheus/prometheus.yaml",          "target": "/root/manifests/prometheus/", "chmod": "+rw"},
-      {"file": "prometheus/serviceaccount.yaml",      "target": "/root/manifests/prometheus/", "chmod": "+rw"},
-      {"file": "prometheus/servicemonitor.yaml",      "target": "/root/manifests/prometheus/", "chmod": "+rw"},
-      {"file": "prometheus/service.yaml",             "target": "/root/manifests/prometheus/", "chmod": "+rw"},
-
-      {"file": "prometheus-operator/clusterrolebinding.yaml", "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
-      {"file": "prometheus-operator/clusterrole.yaml",        "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
-      {"file": "prometheus-operator/deployment.yaml",         "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
-      {"file": "prometheus-operator/serviceaccount.yaml",     "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
-      {"file": "prometheus-operator/servicemonitor.yaml",     "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"},
-      {"file": "prometheus-operator/service.yaml",            "target": "/root/manifests/prometheus-operator/", "chmod": "+rw"}
-    ]
   },
   "environment": {
     "uilayout": "editor-terminal",
