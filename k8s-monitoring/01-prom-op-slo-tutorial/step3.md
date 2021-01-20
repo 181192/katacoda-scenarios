@@ -1,6 +1,6 @@
 ## Create Prometheus Operatror
 
-`manifests/prometheus-operator/deployment.yaml`{{open}}
+`prometheus-operator/deployment.yaml`{{open}}
 
 ```
 kubectl apply -f /root/manifests/prometheus-operator/

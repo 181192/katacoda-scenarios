@@ -2,7 +2,7 @@
 
 Let's see how Prometheus definition looks like:
 
-`manifests/alertmanager/alertmanager.yaml`{{open}}
+`alertmanager/alertmanager.yaml`{{open}}
 
 ```
 kubectl apply -f /root/manifests/alertmanager/

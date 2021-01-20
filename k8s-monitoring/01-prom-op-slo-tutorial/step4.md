@@ -2,7 +2,7 @@
 
 Let's see how Prometheus definition looks like:
 
-`manifests/prometheus/prometheus.yaml`{{open}}
+`prometheus/prometheus.yaml`{{open}}
 
 ```
 kubectl apply -f /root/manifests/prometheus/

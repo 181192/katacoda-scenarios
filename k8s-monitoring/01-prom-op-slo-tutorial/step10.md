@@ -3,11 +3,11 @@
 
 Create a Grafana dashboard manifest
 
-`manifests/dashboards/ingress-nginx-controller.json`{{open}}
+`dashboards/ingress-nginx-controller.json`{{open}}
 
 Generate a configmap with Kustomize and label with `grafana_dashboard: "1"`
 
-`manifests/dashboards/kustomization.yaml`{{open}}
+`dashboards/kustomization.yaml`{{open}}
 
 Apply kustomization to cluster
 ```

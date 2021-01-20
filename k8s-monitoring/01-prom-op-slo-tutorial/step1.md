@@ -1,5 +1,6 @@
+# Bootstrapping the CRD's into the cluster
 
-`manifests/crds/crd-prometheuses.yaml`{{open}}
+`crds/crd-prometheuses.yaml`{{open}}
 
 ```
 ls -l /root/manifests/crds
