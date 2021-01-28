@@ -3,7 +3,7 @@
   "description": "",
   "courses": [
     {
-      "pathway_id": "181192",
+      "pathway_id": "kalli",
       "id": "k8s-monitoring/01-prom-op-slo-tutorial",
       "course_id": "01-prom-op-slo-tutorial",
       "title": "SLO Monitoring with Prometheus",
