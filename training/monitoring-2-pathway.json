@@ -1,0 +1,13 @@
+{
+  "title": "SLO Monitoring with Prometheus - Workshop",
+  "description": "",
+  "courses": [
+    {
+      "pathway_id": "kalli",
+      "id": "k8s-monitoring/01-prom-op-slo-tutorial",
+      "course_id": "01-prom-op-slo-tutorial",
+      "title": "SLO Monitoring with Prometheus",
+      "description": "Learn how to use Prometheus metrics to create SLO error budgets"
+    }
+  ]
+}
