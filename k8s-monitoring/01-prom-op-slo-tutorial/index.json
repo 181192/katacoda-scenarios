@@ -2,7 +2,7 @@
   "title": "Prometheus Operator SLO Tutorial",
   "description": "SLO tutorial with Prometheus Operator on Kubernetes",
   "difficulty": "Intermediate",
-  "time": "30 minutes",
+  "time": "60 minutes",
   "details": {
     "steps": [
       {"text": "step1.md", "code": "foreground.sh"},
