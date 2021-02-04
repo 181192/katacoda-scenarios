@@ -33,7 +33,7 @@ data:
           return 200 '{"message":"oh yes"}';
         }
 
-        location / {
+        location /error {
           add_header Content-Type application/json;
           return 500 '{"message":"error"}';
         }
