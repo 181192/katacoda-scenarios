@@ -47,6 +47,9 @@ kubectl get hpa error-service
 kubectl describe hpa error-service
 ```{{execute}}
 
+```
+kubectl get po
+```{{execute}}
 
 ## Custom metrics from Pod
 
@@ -55,7 +58,6 @@ We can also scale based on the metrics a Pod exposes, let's deploy another sampl
 ```
 ls -l /root/manifests/podinfo
 ```{{execute}}
-
 
 Apply the podinfo manifests
 
@@ -69,12 +71,14 @@ List out all resources labeled `app.kubernetes.io/name=podinfo`
 kubectl get all -l app.kubernetes.io/name=podinfo
 ```{{execute}}
 
+`podinfo/hpa.yaml`{{open}}
+
 Query the metrics server to check for the custom metric `http_requests`.
 
 Also check the `/metrics` endpoint for available metrics https://[[HOST_SUBDOMAIN]]-32080-[[KATACODA_HOST]].environments.katacoda.com/metrics.
 
 ```
-kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1/namespaces/podinfo/pods/*/http_requests" | jq
+kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1/namespaces/default/pods/*/http_requests" | jq
 ```{{execute}}
 
 Check the status of the HPA
@@ -88,3 +92,9 @@ Describe the HPA for more details
 ```
 kubectl describe hpa podinfo
 ```{{execute}}
+
+Generate some load
+
+```
+hey -z 5m https://[[HOST_SUBDOMAIN]]-32080-[[KATACODA_HOST]].environments.katacoda.com/
+```{{execute interrupt}}
