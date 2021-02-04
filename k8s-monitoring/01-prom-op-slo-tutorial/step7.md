@@ -16,4 +16,4 @@ kubectl apply -f /root/manifests/error-service/
 kubectl get po
 ```{{execute}}
 
-Test the [error-service ingress](https://[[HOST_SUBDOMAIN]]-32080-[[KATACODA_HOST]].environments.katacoda.com/)
+Test the [error-service ingress](https://[[HOST_SUBDOMAIN]]-32080-[[KATACODA_HOST]].environments.katacoda.com/ok)
