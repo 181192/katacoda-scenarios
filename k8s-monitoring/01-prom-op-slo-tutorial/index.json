@@ -35,7 +35,6 @@
 
         {"file": "error-service/configmap.yaml",      "target": "/root/manifests/error-service/", "chmod": "+rw"},
         {"file": "error-service/deployment.yaml",     "target": "/root/manifests/error-service/", "chmod": "+rw"},
-        {"file": "error-service/hpa.yaml",            "target": "/root/manifests/error-service/", "chmod": "+rw"},
         {"file": "error-service/ingress.yaml",        "target": "/root/manifests/error-service/", "chmod": "+rw"},
         {"file": "error-service/service.yaml",        "target": "/root/manifests/error-service/", "chmod": "+rw"},
 
