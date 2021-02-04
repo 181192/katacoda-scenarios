@@ -1,0 +1,17 @@
+---
+# Source: podinfo/templates/servicemonitor.yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: podinfo
+  labels:
+    app.kubernetes.io/name: podinfo
+    app.kubernetes.io/version: "5.1.2"
+spec:
+  endpoints:
+    - path: /metrics
+      port: http
+      interval: 15s
+  selector:
+    matchLabels:
+      app: podinfo
