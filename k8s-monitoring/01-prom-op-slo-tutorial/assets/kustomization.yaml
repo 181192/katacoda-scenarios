@@ -34,6 +34,9 @@ resources:
   - ./grafana/service.yaml
   - ./grafana/serviceaccount.yaml
 
+  # HPA
+  - ./hpa/hpa-error-service.yaml
+
   # Ingress Nginx
   - ./ingress-nginx/clusterrole.yaml
   - ./ingress-nginx/clusterrolebinding.yaml
@@ -45,12 +48,31 @@ resources:
   - ./ingress-nginx/service.yaml
   - ./ingress-nginx/serviceaccount.yaml
 
+  # Podinfo
+  - ./podinfo/deployment.yaml
+  - ./podinfo/hpa.yaml
+  - ./podinfo/ingress.yaml
+  - ./podinfo/service.yaml
+  - ./podinfo/servicemonitor.yaml
+
   # Prometheus
   - ./prometheus/clusterrole.yaml
   - ./prometheus/clusterrolebinding.yaml
   - ./prometheus/prometheus.yaml
   - ./prometheus/service.yaml
   - ./prometheus/serviceaccount.yaml
+
+  # Prometheus Adapter
+  - ./prometheus-adapter/cluster-role-binding-resource-reader.yaml
+  - ./prometheus-adapter/cluster-role-resource-reader.yaml
+  - ./prometheus-adapter/configmap.yaml
+  - ./prometheus-adapter/custom-metrics-apiservice.yaml
+  - ./prometheus-adapter/custom-metrics-cluster-role.yaml
+  - ./prometheus-adapter/custom-metrics-cluster-role-binding-hpa.yaml
+  - ./prometheus-adapter/deployment.yaml
+  - ./prometheus-adapter/role-binding-auth-reader.yaml
+  - ./prometheus-adapter/service.yaml
+  - ./prometheus-adapter/serviceaccount.yaml
 
   # Prometheus Operator
   - ./prometheus-operator/clusterrole.yaml
