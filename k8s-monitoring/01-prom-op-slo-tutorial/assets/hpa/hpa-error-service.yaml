@@ -1,0 +1,25 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: error-service
+  labels:
+    app: error-service
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: error-service
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: Object
+      object:
+        metric:
+          name: nginx_ingress_controller_requests_per_second
+        describedObject:
+          apiVersion: extensions/v1beta1
+          kind: Ingress
+          name: error-service
+        target:
+          type: Value
+          value: "100"
