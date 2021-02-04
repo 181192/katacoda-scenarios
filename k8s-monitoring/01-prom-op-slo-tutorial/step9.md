@@ -33,11 +33,7 @@ kubectl get prometheusrules
 Generate som traffic:
 
 ```
-snap install hey
-```{{execute}}
-
-```
-hey -z 5m https://[[HOST_SUBDOMAIN]]-32080-[[KATACODA_HOST]].environments.katacoda.com/
+hey -z 5m https://[[HOST_SUBDOMAIN]]-32080-[[KATACODA_HOST]].environments.katacoda.com/error
 ```{{execute interrupt}}
 
 Check the prometheus rules in the [Prometheus Alerts UI](https://[[HOST_SUBDOMAIN]]-30090-[[KATACODA_HOST]].environments.katacoda.com/alerts)
