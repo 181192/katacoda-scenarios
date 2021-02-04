@@ -37,7 +37,7 @@ spec:
         - --secure-port=6443
         - --cert-dir=/tmp/cert
         - --logtostderr=true
-        - --prometheus-url=http://prometheus-operator-kube-p-prometheus.spv-system.svc:9090
+        - --prometheus-url=http://kube-prometheus-stack-prometheus:9090
         - --metrics-relist-interval=1m
         - --v=4
         - --config=/etc/adapter/config.yaml
