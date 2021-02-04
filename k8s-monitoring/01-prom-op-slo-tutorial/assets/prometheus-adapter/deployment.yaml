@@ -57,9 +57,6 @@ spec:
             scheme: HTTPS
           initialDelaySeconds: 30
         resources:
-          limits:
-            cpu: 500m
-            memory: 512Mi
           requests:
             cpu: 200m
             memory: 128Mi
@@ -80,7 +77,7 @@ spec:
         {}
       affinity:
         {}
-      priorityClassName: 
+      priorityClassName:
       tolerations:
         []
       volumes:
