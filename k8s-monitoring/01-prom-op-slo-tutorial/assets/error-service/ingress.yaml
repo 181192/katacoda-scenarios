@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: error-service
@@ -8,9 +8,15 @@ metadata:
     app: error-service
 spec:
   rules:
-  - http:
-      paths:
-      - path: /
-        backend:
-          serviceName: error-service
-          servicePort: 80
+    - http:
+        paths:
+          - path: /ok
+            pathType: Exact
+            backend:
+              serviceName: error-service
+              servicePort: 80
+          - path: /error
+            pathType: Exact
+            backend:
+              serviceName: error-service
+              servicePort: 80
