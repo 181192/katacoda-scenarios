@@ -50,7 +50,7 @@
         {"file": "grafana/service.yaml",                      "target": "/root/manifests/grafana/", "chmod": "+rw"},
         {"file": "grafana/serviceaccount.yaml",               "target": "/root/manifests/grafana/", "chmod": "+rw"},
 
-        {"file": "hpa/hpa-error-service.yaml",               "target": "/root/manifests/hpa/", "chmod": "+rw"},
+        {"file": "hpa/hpa-error-service.yaml",                "target": "/root/manifests/hpa/", "chmod": "+rw"},
 
         {"file": "ingress-nginx/clusterrole.yaml",        "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
         {"file": "ingress-nginx/clusterrolebinding.yaml", "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
@@ -61,6 +61,8 @@
         {"file": "ingress-nginx/service-metrics.yaml",    "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
         {"file": "ingress-nginx/service.yaml",            "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
         {"file": "ingress-nginx/serviceaccount.yaml",     "target": "/root/manifests/ingress-nginx/", "chmod": "+rw"},
+
+        {"file": "metrics-server/components.yaml",      "target": "/root/manifests/metrics-server/", "chmod": "+rw"},
 
         {"file": "podinfo/deployment.yaml",             "target": "/root/manifests/podinfo/", "chmod": "+rw"},
         {"file": "podinfo/hpa.yaml",                    "target": "/root/manifests/podinfo/", "chmod": "+rw"},

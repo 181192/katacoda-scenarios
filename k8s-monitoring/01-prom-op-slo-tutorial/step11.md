@@ -10,8 +10,13 @@ Here's an example of using the Nginx Ingress Controller metrics to scale once th
 
 `hpa/hpa-error-service.yaml`{{open}}
 
+First deploy the metrics-server
 
-Let's deploy the Prometheus-Adapter for the metrics server
+```
+kubectl apply -f /root/manifests/metrics-server
+```{{execute}}
+
+Then let's deploy the Prometheus-Adapter for the metrics server
 
 ```
 kubectl apply -f /root/manifests/prometheus-adapter
