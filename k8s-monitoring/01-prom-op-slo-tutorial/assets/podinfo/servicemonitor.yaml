@@ -14,4 +14,4 @@ spec:
       interval: 15s
   selector:
     matchLabels:
-      app: podinfo
+      app.kubernetes.io/name: podinfo
